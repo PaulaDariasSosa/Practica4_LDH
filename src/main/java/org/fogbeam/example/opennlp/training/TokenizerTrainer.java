@@ -19,6 +19,11 @@ import opennlp.tools.util.TrainingParameters;
 
 public class TokenizerTrainer
 {
+	/**
+	 * @brief Entrena un modelo de tokenización en base a un archivo de entrenamiento.
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		Charset charset = Charset.forName( "UTF-8" );

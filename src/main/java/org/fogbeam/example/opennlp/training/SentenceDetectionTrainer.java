@@ -19,6 +19,11 @@ import opennlp.tools.util.TrainingParameters;
 
 public class SentenceDetectionTrainer
 {
+	/**
+	 * @brief Train a model for sentence detection
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		Charset charset = Charset.forName("UTF-8");				

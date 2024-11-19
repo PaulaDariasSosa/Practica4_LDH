@@ -16,6 +16,11 @@ public class SentenceDetectionMain
 {
 	private static final Logger logger = Logger.getLogger(SentenceDetectionMain.class.getName());
 
+	/**
+	 * @brief Detect sentences in a demo data file
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		InputStream modelIn = new FileInputStream( "models/en-sent.model" );

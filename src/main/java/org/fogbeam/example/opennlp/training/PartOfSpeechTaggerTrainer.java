@@ -22,6 +22,11 @@ import opennlp.tools.util.TrainingParameters;
 public class PartOfSpeechTaggerTrainer
 {
 	private static final Logger loggerTrainer = Logger.getLogger(PartOfSpeechTaggerTrainer.class.getName());
+
+	/**
+	 * @brief Train a Part of Speech Tagger model
+	 * @param args
+	 */
 	public static void main( String[] args )
 	{
 		POSModel model = null;
@@ -38,7 +43,7 @@ public class PartOfSpeechTaggerTrainer
 		}
 		catch( IOException e )
 		{
-			// Failed to read or parse training data, training failed
+			/// Failed to read or parse training data, training failed
 			loggerTrainer.log(Level.SEVERE, "Failed to read or parse training data", e);
 
 		}
@@ -85,7 +90,7 @@ public class PartOfSpeechTaggerTrainer
 				catch( IOException e )
 				{
 					// Failed to correctly save model.
-					// Written model might be invalid.
+					/// Written model might be invalid.
 					loggerTrainer.log(Level.SEVERE, "Failed to correctly save model, Written model might be invalid.", e);
 
 				}

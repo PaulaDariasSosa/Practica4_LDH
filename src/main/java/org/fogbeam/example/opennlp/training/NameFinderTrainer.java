@@ -21,6 +21,11 @@ import opennlp.tools.util.TrainingParameters;
 
 public class NameFinderTrainer
 {
+	/**
+	 * @brief Train a model for the NameFinderME class
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		Charset charset = Charset.forName( "UTF-8" );

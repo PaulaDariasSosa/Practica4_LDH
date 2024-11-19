@@ -15,31 +15,36 @@ import opennlp.tools.tokenize.TokenizerModel;
 
 
 public class TokenizerMain {
-	// Logger para esta clase
+	/// Logger para esta clase
 	private static final Logger logger = Logger.getLogger(TokenizerMain.class.getName());
+
+	/**
+	 * @brief Tokeniza un archivo de texto en inglés y guarda los tokens en un archivo de salida.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		if (args.length < 2) {
 			logger.severe("Uso: java TokenizerMain <output_file> <input_file1> <input_file2> ...");
 			return;
 		}
 
-		// Archivo de salida
+		/// Archivo de salida
 		String outputFilePath = args[0];
 
-		// Archivos de entrada
+		/// Archivos de entrada
 		List<String> inputFiles = new ArrayList<>();
 		for (int i = 1; i < args.length; i++) {
 			inputFiles.add(args[i]);
 		}
 
-		// Modelo de tokenización
+		/// Modelo de tokenización
 		try (InputStream modelIn = new FileInputStream("models/en-token.model");
 			 BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath, StandardCharsets.UTF_8))) {
 
 			TokenizerModel model = new TokenizerModel(modelIn);
 			Tokenizer tokenizer = new TokenizerME(model);
 
-			// Procesar cada archivo
+			/// Procesar cada archivo
 			for (int i = 1; i < args.length; i++) {
 				String inputFilePath = args[i];
 				logger.info("Procesando archivo: " + inputFilePath);

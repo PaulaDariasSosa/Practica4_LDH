@@ -22,6 +22,12 @@ import opennlp.tools.util.PlainTextByLineStream;
 public class DocumentClassifierTrainer
 {
 	private static final Logger logger = Logger.getLogger(DocumentClassifierTrainer.class.getName());
+
+	/**
+	 * @brief Train a document categorizer model
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		DoccatModel model = null;
@@ -50,9 +56,9 @@ public class DocumentClassifierTrainer
 				}
 				catch( IOException e )
 				{
-					// Not an issue, training already finished.
-					// The exception should be logged and investigated
-					// if part of a production system.
+					/// Not an issue, training already finished.
+					/// The exception should be logged and investigated
+					/// if part of a production system.
 					logger.log(Level.SEVERE, "The exception should be logged and investigated", e);
 				}
 			}
@@ -67,7 +73,7 @@ public class DocumentClassifierTrainer
 		}
 		catch( IOException e )
 		{
-			// Failed to save model
+			/// Failed to save model
 			logger.log(Level.SEVERE, "Error", e);
 		}
 		finally
@@ -80,8 +86,8 @@ public class DocumentClassifierTrainer
 				}
 				catch( IOException e )
 				{
-					// Failed to correctly save model.
-					// Written model might be invalid.
+					/// Failed to correctly save model.
+					/// Written model might be invalid.
 					logger.log(Level.SEVERE, "Failed to correctly save model", e);
 				}
 			}

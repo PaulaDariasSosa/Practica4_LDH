@@ -16,6 +16,10 @@ public class PartOfSpeechTaggerMain
 {
 	private static final Logger logger = Logger.getLogger(PartOfSpeechTaggerMain.class.getName());
 
+	/**
+	 * @brief Main entry point for the PartOfSpeechTaggerMain class
+	 * @param args
+	 */
 	public static void main( String[] args )
 	{
 		InputStream modelIn = null;
@@ -45,7 +49,7 @@ public class PartOfSpeechTaggerMain
 		}
 		catch( IOException e )
 		{
-			// Model loading failed, handle the error
+			/// Model loading failed, handle the error
 			logger.log(Level.SEVERE, "Model loading failed", e);
 		}
 		finally

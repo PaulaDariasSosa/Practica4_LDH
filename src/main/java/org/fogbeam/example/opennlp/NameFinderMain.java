@@ -17,6 +17,7 @@ public class NameFinderMain
 {
 	private static final Logger logger = Logger.getLogger(NameFinderMain.class.getName());
 	/**
+	 * @brief Find names in a sentence using the NameFinderME class
 	 * @param args
 	 */
 	public static void main( String[] args ) throws Exception

@@ -20,11 +20,16 @@ import opennlp.tools.util.TrainingParameters;
 
 public class ChunkerTrainer
 {
+	/**
+	 * @brief Train a chunker model using the CoNLL 2000 training data
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		Charset charset = Charset.forName( "UTF-8" );
 		
-		// without enough training data, you get a NPE...
+		/// without enough training data, you get a NPE...
 		// ObjectStream<String> lineStream = new PlainTextByLineStream(
 		//		new FileInputStream( "training_data/en-chunker.train" ), charset );
 		

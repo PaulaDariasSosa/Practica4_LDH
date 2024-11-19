@@ -12,6 +12,11 @@ public class DocumentClassifierMain
 {
 	private static final Logger logger = Logger.getLogger(DocumentClassifierMain.class.getName());
 
+	/**
+	 * @brief Main method to test the document classifier model
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		

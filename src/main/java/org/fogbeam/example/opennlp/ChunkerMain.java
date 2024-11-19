@@ -15,6 +15,12 @@ import opennlp.tools.chunker.ChunkerModel;
 public class ChunkerMain
 {
 	private static final Logger logger = Logger.getLogger(ChunkerMain.class.getName());
+
+	/**
+	 * @brief Main entry point for the Chunker example
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		InputStream modelIn = null;
@@ -44,7 +50,7 @@ public class ChunkerMain
 			
 			double probs[] = chunker.probs();
 				
-			/*
+			/**
 			   The chunk tags contain the name of the chunk type, for 
 			   example I-NP for noun phrase words and I-VP for verb 
 			   phrase words. Most chunk types have two types of chunk 
@@ -60,7 +66,7 @@ public class ChunkerMain
 		}
 		catch( IOException e )
 		{
-			// Model loading failed, handle the error
+			/// Model loading failed, handle the error
 			logger.log(Level.SEVERE, "Model loading failed", e);
 
 		}

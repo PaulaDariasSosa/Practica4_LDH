@@ -20,6 +20,11 @@ public class ParserMain
 {
 	private static final Logger logger = Logger.getLogger(ParserMain.class.getName());
 
+	/**
+	 * @brief Parse a sentence using the OpenNLP Parser
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main( String[] args ) throws Exception
 	{
 		InputStream modelIn = new FileInputStream( "models/en-parser-chunking.bin" );
