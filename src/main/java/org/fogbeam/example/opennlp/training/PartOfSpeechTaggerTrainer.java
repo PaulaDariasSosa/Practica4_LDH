@@ -8,6 +8,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSSample;
@@ -20,6 +22,7 @@ import opennlp.tools.util.TrainingParameters;
 
 public class PartOfSpeechTaggerTrainer
 {
+	private static final Logger logger = Logger.getLogger(PartOfSpeechTaggerTrainer.class.getName());
 	public static void main( String[] args )
 	{
 		POSModel model = null;
@@ -37,7 +40,8 @@ public class PartOfSpeechTaggerTrainer
 		catch( IOException e )
 		{
 			// Failed to read or parse training data, training failed
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Failed to read or parse training data, training failed", e);
+
 		}
 		finally
 		{
@@ -52,7 +56,8 @@ public class PartOfSpeechTaggerTrainer
 					// Not an issue, training already finished.
 					// The exception should be logged and investigated
 					// if part of a production system.
-					e.printStackTrace();
+					logger.log(Level.SEVERE, "The exception should be logged and investigated", e);
+
 				}
 			}
 		}
@@ -67,7 +72,8 @@ public class PartOfSpeechTaggerTrainer
 		catch( IOException e )
 		{
 			// Failed to save model
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Failed to save model", e);
+
 		}
 		finally
 		{
@@ -81,7 +87,8 @@ public class PartOfSpeechTaggerTrainer
 				{
 					// Failed to correctly save model.
 					// Written model might be invalid.
-					e.printStackTrace();
+					logger.log(Level.SEVERE, "Failed to correctly save model", e);
+
 				}
 			}
 						

@@ -5,6 +5,8 @@ package org.fogbeam.example.opennlp;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import opennlp.tools.sentdetect.SentenceDetectorME;
 import opennlp.tools.sentdetect.SentenceModel;
@@ -12,6 +14,8 @@ import opennlp.tools.sentdetect.SentenceModel;
 
 public class SentenceDetectionMain
 {
+	private static final Logger logger = Logger.getLogger(SentenceDetectionMain.class.getName());
+
 	public static void main( String[] args ) throws Exception
 	{
 		InputStream modelIn = new FileInputStream( "models/en-sent.model" );
@@ -38,7 +42,7 @@ public class SentenceDetectionMain
 		}
 		catch( IOException e )
 		{
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Error", e);
 		}
 		finally
 		{

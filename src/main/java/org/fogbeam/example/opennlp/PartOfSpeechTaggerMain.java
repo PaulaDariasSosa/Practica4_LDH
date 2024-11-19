@@ -5,6 +5,8 @@ package org.fogbeam.example.opennlp;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
@@ -12,6 +14,8 @@ import opennlp.tools.postag.POSTaggerME;
 
 public class PartOfSpeechTaggerMain
 {
+	private static final Logger logger = Logger.getLogger(PartOfSpeechTaggerMain.class.getName());
+
 	public static void main( String[] args )
 	{
 		InputStream modelIn = null;
@@ -42,7 +46,7 @@ public class PartOfSpeechTaggerMain
 		catch( IOException e )
 		{
 			// Model loading failed, handle the error
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Model loading failed", e);
 		}
 		finally
 		{

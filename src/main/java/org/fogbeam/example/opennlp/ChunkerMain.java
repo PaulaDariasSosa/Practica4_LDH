@@ -5,6 +5,8 @@ package org.fogbeam.example.opennlp;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import opennlp.tools.chunker.ChunkerME;
 import opennlp.tools.chunker.ChunkerModel;
@@ -12,6 +14,7 @@ import opennlp.tools.chunker.ChunkerModel;
 
 public class ChunkerMain
 {
+	private static final Logger logger = Logger.getLogger(ChunkerMain.class.getName());
 	public static void main( String[] args ) throws Exception
 	{
 		InputStream modelIn = null;
@@ -58,7 +61,8 @@ public class ChunkerMain
 		catch( IOException e )
 		{
 			// Model loading failed, handle the error
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Model loading failed", e);
+
 		}
 		finally
 		{

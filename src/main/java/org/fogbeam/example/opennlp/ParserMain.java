@@ -5,6 +5,8 @@ package org.fogbeam.example.opennlp;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import opennlp.tools.cmdline.parser.ParserTool;
 import opennlp.tools.parser.Parse;
@@ -16,6 +18,8 @@ import opennlp.tools.parser.ParserModel;
 
 public class ParserMain
 {
+	private static final Logger logger = Logger.getLogger(ParserMain.class.getName());
+
 	public static void main( String[] args ) throws Exception
 	{
 		InputStream modelIn = new FileInputStream( "models/en-parser-chunking.bin" );
@@ -39,7 +43,7 @@ public class ParserMain
 		}
 		catch( IOException e )
 		{
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Error", e);
 		}
 		finally
 		{

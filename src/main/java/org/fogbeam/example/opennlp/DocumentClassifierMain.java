@@ -2,12 +2,15 @@ package org.fogbeam.example.opennlp;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import opennlp.tools.doccat.DoccatModel;
 import opennlp.tools.doccat.DocumentCategorizerME;
 
 public class DocumentClassifierMain
 {
+	private static final Logger logger = Logger.getLogger(DocumentClassifierMain.class.getName());
 
 	public static void main( String[] args ) throws Exception
 	{
@@ -31,7 +34,7 @@ public class DocumentClassifierMain
 		}
 		catch( Exception e )
 		{
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Error", e);
 			
 		}
 		finally

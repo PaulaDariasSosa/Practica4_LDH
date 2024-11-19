@@ -5,6 +5,8 @@ package org.fogbeam.example.opennlp;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
@@ -13,6 +15,7 @@ import opennlp.tools.util.Span;
 
 public class NameFinderMain
 {
+	private static final Logger logger = Logger.getLogger(NameFinderMain.class.getName());
 	/**
 	 * @param args
 	 */
@@ -54,7 +57,7 @@ public class NameFinderMain
 		}
 		catch( IOException e )
 		{
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Error", e);
 		}
 		finally
 		{
