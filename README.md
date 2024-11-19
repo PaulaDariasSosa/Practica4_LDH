@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=PaulaDariasSosa_Practica4_LDH&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=PaulaDariasSosa_Practica4_LDH)
+
 Code to accompany Phil's June 2015 Tri-JUG presentation
 on OpenNLP.
 
